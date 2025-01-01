@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,6 +75,17 @@
             color: #888;
             opacity: 0;
         }
+
+        .food-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .food-message img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +93,11 @@
     <header class="header">
         <h1 class="title">Happy New Year 2025</h1>
         <p class="subtitle">Wishing you a spectacular year ahead!</p>
-        <button class="button" onclick="scrollToFooter()">Celebrate</button>
+        <button class="button" onclick="celebrate()">Celebrate</button>
+        <div class="food-message" id="food-message">
+            <p>Enjoy this delicious New Year treat!</p>
+            <img src="https://example.com/new-year-treat.jpg" alt="New Year Treat">
+        </div>
     </header>
     <footer>
         <p>&copy; 2025 New Year Wishes</p>
@@ -164,6 +178,12 @@
         gsap.to(".subtitle", { opacity: 1, y: -20, duration: 1.5, delay: 1 });
         gsap.to(".button", { opacity: 1, y: -20, duration: 1.5, delay: 2 });
         gsap.to("footer", { opacity: 1, delay: 3 });
+
+        // Celebrate Function
+        function celebrate() {
+            document.getElementById('food-message').style.display = 'block';
+            scrollToFooter();
+        }
 
         // Scroll to Footer
         function scrollToFooter() {
